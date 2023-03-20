@@ -11,9 +11,6 @@ import ViewItemModal from "./Components/ViewItemModal";
 const appRouter = createBrowserRouter([{
   path:'/',
   element:<Home/> ,
-  },{
-    path:'/viewpost',
-    element:<ViewItemModal/>
   }])
 function App() {
   return (
