@@ -7,8 +7,11 @@ import { useDispatch } from "react-redux";
 import { newposts } from "../utils/appSlice";
 import { useSelector } from "react-redux";
 import { Alert } from 'react-bootstrap';
+import { addviewpostarray } from "../utils/viewpostSlice";
 export default function Example() {
   const search = useSelector((store) => store.app.searchitems);
+  const viewpostarr = useSelector((store) => store.viewpost.viewpostarray);
+ 
   const [showAlert, setShowAlert] = useState(false);
   const dispatch = useDispatch();
   const [text1, setText1] = useState("");
@@ -46,11 +49,16 @@ export default function Example() {
     }
     newarr.unshift(newobj);
     
+    let vpa = [...viewpostarr];
+    
+    vpa.push(newobj);
     dispatch(newposts(newarr));
+
+    dispatch(addviewpostarray(vpa));
 
     setText1("");
     setText2("");
-    // do something with the input text and formatting options
+    handleClose()
   };
 
   const [show, setShow] = useState(false);

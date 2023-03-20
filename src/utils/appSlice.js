@@ -5,6 +5,7 @@ const appSlice = createSlice({
     initialState:{
         allitems:[],
         searchitems:[],
+        viewpostid:false,
     },
     reducers:{
         additem:(state,action)=>{
@@ -19,17 +20,10 @@ const appSlice = createSlice({
         newposts:(state,action)=>{
             state.allitems= action.payload;
             state.searchitems= action.payload;
-
-            // console.log('inside newposts');
-            // let modarr = state.searchitems;
-            // console.log(modarr);
-            // state.searchitems=[];
-            // let newarr = state.allitems;
-            //  console.log(newarr);
-            // return;
-            // state.searchitems= state.searchitems.push(action.payload);
             
-        }
+        },
+        
+        
     }
 })
 export const { additem ,changeQuery,newposts}= appSlice.actions

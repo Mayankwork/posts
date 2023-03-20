@@ -37,7 +37,7 @@ const SearchBar = () => {
             placeholder="Search"
             aria-label="Search"
           />
-          <button className="btn btn-outline-success">Refresh</button>
+          <button className="btn btn-outline-success" onClick={()=>{window.location.reload()}}>Refresh</button>
         </form>
       </div>
     </>

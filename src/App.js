@@ -7,9 +7,13 @@ import store from "./utils/store";
 import { Provider } from 'react-redux';
 import React from "react";
 import Header from "./Components/Header";
+import ViewItemModal from "./Components/ViewItemModal";
 const appRouter = createBrowserRouter([{
   path:'/',
   element:<Home/> ,
+  },{
+    path:'/viewpost',
+    element:<ViewItemModal/>
   }])
 function App() {
   return (
@@ -18,6 +22,7 @@ function App() {
        <Provider store={store}>
        <Header />
        <RouterProvider router={appRouter}/>
+       
        </Provider>    
         
     </div>
